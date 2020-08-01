@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+				
+		// var arr=[2,8,6,3,0]
+		//快排			
+		// function paixu(arr){
+		// 	if(arr.length<=1){
+		// 		return arr;
+		// 	}
+		// 	var pivotIndex=Math.floor(arr.length/2);
+		// 	var pivot=arr.splice(pivotIndex,1)[0];
+		// 	console.log("arr==>",arr)
+		// 	console.log("arr.length/2===>",(arr.length/2),"pivotIndex====>",pivotIndex,"pivot-->",pivot)
+		// 	//var pivot=arr[pivotIndex];
+		// 	var left=[];
+		// 	var right=[];
+		// 	for(var i=0;i<arr.length;i++) {
+		// 		if(arr[i]<pivot){
+		// 			left.push(arr[i]);
+		// 		}else{
+		// 			right.push(arr[i]);
+		// 		}
+		// 	}
+		// 	return paixu(left).concat([pivot],paixu(right))
+		// }
+		
+		
+		
+		// console.log(paixu(arr))
+		
+		
+		//二分
+		// function search(arr,low,height,key){
+		//     height--;
+		//     if(low>height){
+		//         return -1;
+		//     }
+		//     var mid=Math.floor((low+height)/2);
+		//     if(arr[mid]==key){
+		//         return mid;
+		//     }else if(arr[mid]<key){
+		//         low=mid+1
+		//         return search(arr,low,height,key);
+		//     }else{
+		//         mid=height-1;
+		//         return search(arr,low,height,key);
+		//     }
+		// }
+		// console.log(search([1,2,3,4,5,6,7,8,9],0,8n,2))
+		
+		
+		//二分递归
+		// function binerySearch(item,arr,start,end){
+		//     var start = start || 0
+		//     var end = end || arr.length-1
+		//     var mid = Math.floor((start+end)/2)
+		
+		//     if(item === arr[mid]){
+		//         return mid
+		//     }else if(item>arr[mid]){
+		//         return binerySearch(item,arr,mid+1,end)
+		//     }else{
+		//         return binerySearch(item,arr,start,mid-1)
+		//     }
+		//     return false
+		// }
+		// var a=[1,2,3,4,5,6,7,8,9]
+		// console.log(binerySearch(5,a))
+		
+		// function move(array) {
+		//  // 代码写在这里↓↓↓↓↓
+		//   var left=[];
+		//   var right=[];
+		//   for(let i=0;i<array.length;i++){
+		//     if(array[i]=="*"){
+		//       left.push(array[i]);
+		//     }else{
+		//       right.push(array[i]);
+		//     }
+		//   }
+		//   return left.concat(right);
+		//  // 代码写在这里↑↑↑↑↑
+		// }
+		// console.log(move(['*', 'd', 'c', '*', 'e']));
+		
+		
+		// ====================
+		// 题目：实现一个函数，效果同 document.getElementById（通过遍历 node.childNodes 和 node.id 属性实现）
+		function getElementById(findId) {
+		 // 代码写在这里↓↓↓↓↓
+		  
+		  for(let i=0;i<node.childNodes.length;i++){
+			  if(node.childNodes.childNodes){}
+		    if(node.id==findId){
+		      return getElementById(node); 
+		    }
+		  }
+		  
+		 
+		}
+		
+		
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		    <script>
+		        function Queue() {
+		            this.dataStore=[];
+		            this.enqueue=enqueue;
+		            this.dequeue=dequeue;
+		            this.dequeue2=dequeue2;//优先级队列
+		            this.front=front;
+		            this.back=back;
+		            this.toString=toString;
+		            this.toStringObj=toStringObj;//打印元素是对象的队列
+		            this.empty=empty;
+		            this.count=count;
+		        }
+				//进入队列
+		        function enqueue(element) {
+		            this.dataStore.push(element);
+		
+		        }
+				//移除队列
+		        function dequeue() {
+		            return this.dataStore.shift();
+		        }
+				
+		        function dequeue2() {
+		            var priority=0;
+		            for(var i=1;i<this.dataStore.length;i++){
+		                if(this.dataStore[i].code<this.dataStore[priority].code){
+		                    priority=i;
+		                }
+		            }
+		            return this.dataStore.splice(priority,1);
+		        }
+				// 返回队列头数据
+		        function front() {
+		            return this.dataStore[0];
+		        }
+				// 返回队列尾数据
+		        function back() {
+		            return this.dataStore[this.dataStore.length-1];
+		        }
+		        function toString() {
+		            var retStr="";
+		            for(var i=0;i<this.dataStore.length;++i){
+		                retStr+=this.dataStore[i]+"\n";
+		            }
+		            return retStr;
+		        }
+		        function toStringObj() {
+		            var retStr="";
+		            for(var i=0;i<this.dataStore.length;i++){
+		                retStr+="name:"+this.dataStore[i].name+",code:"+this.dataStore[i].code+"\n";
+		            }
+		            return retStr;
+		        }
+				//队列长度
+		        function count() {
+		            return this.dataStore.length;
+		        }
+				//判断队列是否为空
+		        function empty() {
+		            if(this.dataStore.length===0){
+		                return true;
+		            }else{
+		                return false;
+		            }
+		        }
+		
+		        // 测试队列
+		        var q = new Queue();
+		        q.enqueue("a");
+		        q.enqueue("b");
+		        q.enqueue("c");
+		        console.log(q.toString());
+		        q.dequeue();
+		        console.log(q.toString());
+		        console.log("Front of queue: " + q.front());
+		        console.log("Back of queue: " + q.back());
+		        </script>
+
+	</body>
+</html>

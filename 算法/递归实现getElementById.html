@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Dom遍历</title>
+    </head>
+    <body>
+        <div>
+			<div id="aa">
+				aa1
+			</div>
+			<div id="aa">
+				aa2
+			</div>
+			<div>
+				
+			</div>
+		</div>
+		<div id="aa">
+			aa2
+		</div>
+    </body>
+</html>
+<script type="text/javascript">
+	console.log(document.getElementById("aa"))
+    // ====================
+    // 题目：实现一个函数，效果同 document.getElementById（通过遍历 node.childNodes 和 node.id 属性实现）
+    function getElementId(findId) {
+     // 代码写在这里↓↓↓↓↓
+      if(node.id==findId){
+		  return node;
+	  }
+	  for(let i=0;i<node.childNodes.length;i++){
+		  return getElement(findId)
+	  }
+     // 代码写在这里↑↑↑↑↑
+    }
+
+	
+</script>

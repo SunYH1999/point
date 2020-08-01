@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function F(n){
+				if(n<=0){
+					return 0
+				}else if(n==1||n==2){
+					return 1
+				}
+				return F(n-1)+F(n-2)	
+			}
+			console.log(F(8))
+			
+		</script>
+	</body>
+</html>
