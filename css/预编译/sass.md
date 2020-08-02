@@ -117,8 +117,107 @@
 
 #### 10.for语句
 
+@for $i from 0 to 100  循环了 0-99次 一共100次<br>
+@for $i from 0 through 100  循环了0-100次 一共101次
+
+```css
+	/*栅格系统*/
+	@for $i from 0 to 100 {
+		.width#{$i} {
+			width: #{percentage($i / 100)};
+		}
+	}
+	/*编译结果*/
+	* {
+	  margin: 0;
+	  padding: 0; 
+	}
+	.width0 {
+	  width: 0%; 
+	}
+	.width1 {
+	  width: 1%; 
+	}  
+	  ......
+	
+	.width99 {
+	  width: 99%; 
+	} 	
+	
+	
+	
+	/*栅格系统*/
+	@for $i from 0 through 100 {
+		.width#{$i} {
+			width: #{percentage($i / 100)};
+		}	
+	}
+	/*编译结果*/
+	* {
+	  margin: 0;
+	  padding: 0; 
+	}	
+	.width0 {
+	  width: 0%; 
+	}	
+	.width1 {
+	  width: 1%; 
+	}
+	 
+	......
+	 
+	.width100 {
+	  width: 100%; 
+	}  
+```
+
+
 #### 11.while语句
+```css
+	$i: 0;
+	@while $i < 100 {		
+		.col-lg-#{$i} {
+			 width: percentage($i/100);
+		}	
+		$i: $i + 1;
+	}
+```
 
 #### 12.each语句
+
+用于循环枚举类型<br>
+语法： @each $i in $meiju {}
+
+```css
+	$meiju: 1, 2, 3, 4, 5, 6, 12;	
+	@each $i in $meiju {
+		.col-lg-#{$i} {
+			width: percentage($i / 12);
+		}
+	}
+
+	/*编译结果*/
+	.col-lg-1 {
+	  width: 8.33333%; 
+	}
+	.col-lg-2 {
+	  width: 16.66667%;
+	}
+	.col-lg-3 {
+	  width: 25%;
+	}	
+	.col-lg-4 {
+	  width: 33.33333%;
+	}	
+	.col-lg-5 {
+	  width: 41.66667%; 
+	}	
+	.col-lg-6 {
+	  width: 50%; 
+	}	
+	.col-lg-12 {
+	  width: 100%; 
+	} 
+```
 
 
