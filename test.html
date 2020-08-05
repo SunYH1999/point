@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			  function Animal(name){
+			             this.name = name;
+			             this.friends = ['dog','cat'];
+			         }
+			         Animal.prototype.sayName = function(){
+			             alert(this.name);
+			         };
+			         var a1 = new Animal('d');
+			         var a2 = new Animal('c');
+			         a1.friends.push('snake');
+			         alert(a1.friends);//[dog,cat,snake]
+			         alert(a2.friends);//[dog,cat]
+			 
+			 
+		</script>
+	</body>
+</html>
