@@ -6,6 +6,7 @@
 	</head>
 	<body>
 		<script type="text/javascript">
+<<<<<<< HEAD
 			function qiuhe(){
 			    var b=readInt();
 			    var str="";
@@ -20,6 +21,22 @@
 			    printsth(key);
 			}
 			qiuhe();
+=======
+			  function Animal(name){
+			             this.name = name;
+			             this.friends = ['dog','cat'];
+			         }
+			         Animal.prototype.sayName = function(){
+			             alert(this.name);
+			         };
+			         var a1 = new Animal('d');
+			         var a2 = new Animal('c');
+			         a1.friends.push('snake');
+			         alert(a1.friends);//[dog,cat,snake]
+			         alert(a2.friends);//[dog,cat]
+			 
+			 
+>>>>>>> f7b1ca8c888d1461344709472a7f7d5284dec076
 		</script>
 	</body>
 </html>
