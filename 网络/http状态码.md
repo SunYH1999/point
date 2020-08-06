@@ -27,7 +27,10 @@
 401 Unauthorized：未经许可，需要通过HTTP认证<br>
 403 Forbidden：服务器拒绝该次访问（访问权限出现问题）<br>
 404 Not Found：表示服务器上无法找到请求的资源，除此之外，也可以在服务器拒绝请求但不想给拒绝原因时使用<br>
+405
 
 #### 5xx Server Error（服务器错误）	服务器处理请求出错
 500 Inter Server Error：表示服务器在执行请求时发生了错误，也有可能是web应用存在的bug或某些临时的错误时<br>
+502 
 503 Server Unavailable：表示服务器暂时处于超负载或正在进行停机维护，无法处理请求<br>
+504 
