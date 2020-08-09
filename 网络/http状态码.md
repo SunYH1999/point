@@ -27,10 +27,10 @@
 401 Unauthorized：未经许可，需要通过HTTP认证<br>
 403 Forbidden：服务器拒绝该次访问（访问权限出现问题）<br>
 404 Not Found：表示服务器上无法找到请求的资源，除此之外，也可以在服务器拒绝请求但不想给拒绝原因时使用<br>
-405
+405 Method Not Allowd：表示请求的方式不对，请求的方式有get、post、head、put……常用的为post和get。<br>
 
 #### 5xx Server Error（服务器错误）	服务器处理请求出错
 500 Inter Server Error：表示服务器在执行请求时发生了错误，也有可能是web应用存在的bug或某些临时的错误时<br>
-502 
+502 Bad Gateway：只有HTTP代理会发送这个响应代码。它表明代理方面出现问题，或者代理与上行服务器之间出现问题，而不是上行服务器本身有问题。若代理根本无法访问上行服务器，响应代码将是504<br>
 503 Server Unavailable：表示服务器暂时处于超负载或正在进行停机维护，无法处理请求<br>
-504 
+504 Gateway Timeout：跟502类似，只有HTTP代理会发送此响应代码。此响应代码表明代理无法连接上行服务器<br>
