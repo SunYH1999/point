@@ -10,6 +10,7 @@ Could not build the precompiled application for the device.
 
 Error launching application on Dog Sun的iPhone 11 Pro Max. -->
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="zh">
 <head>
 	<meta charset="UTF-8">
@@ -34,5 +35,44 @@ Error launching application on Dog Sun的iPhone 11 Pro Max. -->
 		console.log(some)//true
 	</script>
 	
+=======
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 利用dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据    图标的数据可以从后台构造 然后传回前台
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+>>>>>>> 3c1eed4d7fae47b1534892c406b2bff90777ca03
 </body>
 </html>
