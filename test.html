@@ -1,17 +1,38 @@
+<!-- try replacing 'com.example' with your signing id in Xcode: open ios/Runner.xc
+
+https://www.jmwww.net/yidong/11532.html
+
+
+
+
+
+Could not build the precompiled application for the device.
+
+Error launching application on Dog Sun的iPhone 11 Pro Max. -->
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<script type="text/javascript">
-		if(true){
-			console.log(11)
-		}
-		if(false){
-			console.log(22)
-		}
-		</script>
-	</body>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		let list = [
+		    {name:"aaa",age:3},
+		    {name:"bbb",age:4},
+		    {name:"ccc",age:5},
+		];
+		 var eve= list.every(function(item,index,arr){
+		   return item.age > 4
+		})
+		console.log(eve)//false;
+		var some = list.some(function(item){
+		   return item.age > 4
+		})
+		console.log(some)//true
+	</script>
+	
+</body>
 </html>
