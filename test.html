@@ -1,78 +1,112 @@
-<!-- try replacing 'com.example' with your signing id in Xcode: open ios/Runner.xc
-
-https://www.jmwww.net/yidong/11532.html
-
-
-
-
-
-Could not build the precompiled application for the device.
-
-Error launching application on Dog Sun的iPhone 11 Pro Max. -->
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="zh">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title></title>
-</head>
-<body>
-	<script type="text/javascript">
-		let list = [
-		    {name:"aaa",age:3},
-		    {name:"bbb",age:4},
-		    {name:"ccc",age:5},
-		];
-		 var eve= list.every(function(item,index,arr){
-		   return item.age > 4
-		})
-		console.log(eve)//false;
-		var some = list.some(function(item){
-		   return item.age > 4
-		})
-		console.log(some)//true
-	</script>
-	
-=======
 <html>
 <head>
     <meta charset="utf-8">
     <title>ECharts</title>
     <!-- 引入 echarts.js -->
-    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
-</head>
-<body>
+    <script src="echarts-all-3.js" type="text/javascript" charset="utf-8"></script>
+<body style="background-color: black;">
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main" style="width: 600px;height:400px;"></div>
+    <div id="main" style="width: 80%;height:400px; margin: 10% auto;"></div>
     <script type="text/javascript">
         // 利用dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
 
         // 指定图表的配置项和数据    图标的数据可以从后台构造 然后传回前台
-        var option = {
-            title: {
-                text: 'ECharts 入门示例'
+        option = {
+            backgroundColor: 'black',
+            tooltip: {
+                trigger: 'axis'
             },
-            tooltip: {},
+            color: ['#f69846', '#00ffb4', '#44aff0', '#f6d54a', '#45dbf7',
+                '#ad46f3', '#f845f1', '#ff4343', '#ffa800', '#39E7FB', '#FAC901',
+            ],
             legend: {
-                data:['销量']
+                icon: "circle", //  这个字段控制形状  类型包括 circle，rect ，roundRect，triangle，diamond，pin，arrow，none
+                textStyle: {
+                    color: 'white',
+                    fontSize: 18
+                },
+                data: ['邮件营销']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: { //可视化工具箱
+                x: 'center',
+                y: '25',
+                
+                iconStyle: {
+                    normal: {
+                        color: 'white', //设置图标颜色
+                        textStyle: {
+                            color: 'white',
+                            fontSize: 1000
+                        },
+                    },
+                    emphasis: { //字体颜色及位置
+                        color: 'white',
+                        textPosition: 'bottom'
+                    }
+                }
             },
             xAxis: {
-                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                type: 'category',
+                boundaryGap: false,
+                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+                axisTick: {
+                    show: false//删除超出正坐标线段
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    }
+                },
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: 'white',
+                        fontSize: 18
+                    }
+                },
             },
-            yAxis: {},
+            yAxis: {
+                type: 'value',
+                axisTick: {
+                    show: false//删除超出正坐标线段
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: 'white',
+                    }
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: 'white',
+                        fontSize: 18
+                    }
+                },
+                splitLine: { //坐标轴以外的横线颜色
+                    lineStyle: {
+                        type:'dashed',//虚线
+                        color: 'white'
+                    }
+                }
+            },
             series: [{
-                name: '销量',
-                type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
-            }]
+                    name: '日活',
+                    type: 'line',
+                    stack: '总量',
+                    data: [120, 132, 101, 134, 90, 230, 210]
+                }
+            ]
         };
-
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
     </script>
->>>>>>> 3c1eed4d7fae47b1534892c406b2bff90777ca03
+
 </body>
 </html>
