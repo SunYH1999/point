@@ -10,7 +10,7 @@
 
 
 
-Class类中不存在变量提升
+### Class类中不存在变量提升
 
  // es5
  var bar  = new Bar(); // 可行
@@ -24,7 +24,7 @@ Class类中不存在变量提升
          this.foo = 42;
      }
  }
-Class内部会启用严格模式
+### Class内部会启用严格模式
 
  // es5
  function Bar() {
@@ -39,7 +39,7 @@ Class内部会启用严格模式
     }
   }
   let foo = new Foo();
-Class内部不能重写类名（修改类名）
+### Class内部不能重写类名（修改类名）
 
 // es5
  function Bar() {
@@ -58,7 +58,7 @@ Class内部不能重写类名（修改类名）
  }
  let foo = new Foo();
  Foo = 'Fol';// it's ok
-Class必须使用new调用
+### Class必须使用new调用
 
  // es5
  function Bar(){ }
@@ -67,7 +67,7 @@ Class必须使用new调用
  class Foo {
  }
  let foo = Foo();// Uncaught TypeError: Class constructor Foo cannot be invoked without 'new'
-Class中的所有方法不可枚举
+### Class中的所有方法不可枚举
 
  // es5
  function Bar() {}
@@ -84,7 +84,7 @@ Class中的所有方法不可枚举
  console.log(Object.keys(Foo))// []
  console.log(Object.keys(Foo.prototype));// []
 
-Class 的继承有两条继承链
+### Class 的继承有两条继承链
 一条是：子类的__proto__指向父类；
 另一条是：子类的prototype属性的__proto__指向父类的prototype属性
 es6子类通过__proto__属性找到父类，而es5子类通过__proto__找到Function.prototype
@@ -99,7 +99,8 @@ es6子类通过__proto__属性找到父类，而es5子类通过__proto__找到Fu
  class Father {}
  class Child extends Father {}
  console.log(Child.__proto__ === Father); // true
-es5 与 es6子类this的生成顺序不同
+
+### es5 与 es6子类this的生成顺序不同
 es5继承是先建立子类实例对象this，再调用父类构造函数修饰子类实例；
 es6继承是先建立父类实例对象this，再调用子类构造函数修饰this。即在子类构造函数中先调用super()方法，之后再能使用this。
 
