@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var kthFactor = function(n, k) {
+				let arr = [];
+				for (let i = 1; i <= n; i++) {
+					if(n%i==0){
+						arr.push(i);
+					}
+				}
+				console.log(arr)
+				if (arr.length < k ) {
+					return -1
+				}
+				return arr[k - 1];
+
+			};
+			console.log(kthFactor(4, 4))
+			
+			
+			
+			
+			
+			// var arr =  [1, 12, 2, 6, 3, 4, 4, 3, 6, 2]
+			//                 function unique( arr ){
+			//                     arr = arr.sort();
+			//                     console.log(arr);
+			
+			//                 }
+			// 				unique( arr )
+			               
+		</script>
+	</body>
+</html>

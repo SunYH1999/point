@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// var isBoomerang = function(points) {
+			//     if(points[0].toString()==points[1].toString()||points[0].toString()==points[2].toString()||points[2].toString()==points[1].toString()){
+			//         return false
+			//     }
+			//     if(((points[0][1]-points[1][1]/points[0][0]-points[1][0]))==(points[0][1]-points[2][1])/(points[0][0]-points[2][0])){
+			//         return false
+			//     }
+			//     return true
+			// };
+			
+			
+			
+			var isBoomerang = function(points) {
+			   let dx1=points[0][0];
+			 let dx2=points[1][0];
+			 let dx3=points[2][0];
+			  let dy1=points[0][1];
+			 let dy2=points[1][1];
+			 let dy3=points[2][1];
+			 let ax1=dx1-dx2;
+			 let ay1=dy1-dy2;
+			 let ax2=dx1-dx3;
+			 let ay2=dy1-dy3;
+			 let k1=ay1/ax1;
+			 let k2=ay2/ax2;
+			 return k1!==k2&&!isNaN(k1)&&!isNaN(k2);
+			};
+			
+
+			console.log(isBoomerang([[0,1],[0,0],[0,2]]))
+		</script>
+	</body>
+</html>
