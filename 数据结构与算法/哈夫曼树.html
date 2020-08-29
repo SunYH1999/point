@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//用于测试数据
+			var arr = [1, 2, 3, 4, 5, 6]
+
+			//哈夫曼树类
+			function Huffman(left, right) {
+				this.left = left; //左子节点
+				this.right = right; //右子节点
+			}
+
+			//节点值
+			Huffman.prototype.val = function() {
+				return (this.left.val ? this.left.val() : this.left) + (this.right.val ? this.right.val() : this.right);
+			};
+
+			//生成
+			//list：用于生成的值，数组类型
+			Huffman.create = function(list) {
+				while (list.length > 1) {
+					list.sort(function(a, b) {
+						a = a.val ? a.val() : a;
+						b = b.val ? b.val() : b;
+						return a - b;
+					});
+
+					var item = new Huffman(list.shift(), list.shift());
+					list.push(item);
+				}
+				return list[0]
+			}
+
+			//示例
+			var huff = Huffman.create(arr);
+			console.log(huff)
+		</script>
+	</body>
+</html>
