@@ -66,27 +66,6 @@
 			// console.log(plusOne([6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3]))
 			// console.log(6145390195186705543)
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 
 		// let arr =[];
 		// if(!arr){
@@ -99,75 +78,14 @@
 		
 		
 		/**
-		 * @param {character[][]} grid
-		 * @return {number}
+		 * @param {string} S
+		 * @param {string} T
+		 * @return {boolean}
 		 */
-		var maxAreaOfIsland = function(grid) {
-			function dfs(i,j,grid,row,col){
-			    
-			    if(i>=row || i<0 || j<0 || j>=col || grid[i][j] === 0){
-			        return;
-			    }
-			    now++
-				console.log("now====>"+now)
-				console.log(11111111)
-			    grid[i][j]=0;
-			    dfs(i-1,j,grid,row,col);
-			    dfs(i+1,j,grid,row,col);
-			    dfs(i,j-1,grid,row,col);
-			    dfs(i,j+1,grid,row,col);
-			}
-		    let max=0;
-		    var now=0
-		    let row=grid.length;
-		    if(row==0){
-		        return 0;
-		    }
-		    let col=grid[0].length;
-		    for(let i=0;i<row;i++){
-		        for(let j=0;j<col;j++){
-		            if(grid[i][j]===1){
-						console.log("一座岛开始")
-		                dfs(i,j,grid,row,col);
-						console.log("一座岛结束")
-		                if(now>max){
-		                    max=now;
-		                }
-		                now=0
-		            }
-		        }
-		    }
-		    return max;
-		};
 		
-		
-		
-		
-		var grid=[[1,1,0,0,0],[1,1,0,0,0],[0,0,0,1,1],[0,0,0,1,1]]
-		console.log(maxAreaOfIsland(grid))
-		
-
-
-
-
-var a=8;
-function fun(){
-	a=9
-	
-}
-fun();
-console.log(a)
-
-			
-			
-			
-			
-			
-			
-			
-		
-			
-			
+		let arr=[3,4,0,0,0];
+		arr[3]=2;
+		console.log(arr)
 			
 			
 		
