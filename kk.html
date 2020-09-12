@@ -83,14 +83,43 @@
 		 * @return {boolean}
 		 */
 		
-		let arr=[3,4,0,0,0];
-		arr[3]=2;
-		console.log(arr)
-			
-			
+		// let arr=[3,4,0,0,0];
+		// arr[3]=2;
+		// console.log(arr)
 		
 			
+			
+		// let arr = [1,0,0,2,9,8,3,1];
+		// function unique(arr) {
+		// 	return Array.from(new Set(arr))
+		// }
+		// console.log(unique(arr))
+			
 
+
+// let colors = [ "red", [ "green", "lightgreen" ], "blue" ];
+// let [ firstColor, secondColor = "green" ] = colors;
+// console.log(secondColor); // "green"
+
+
+
+ let node = {
+     type: "Identifier",
+     name: "foo",
+     loc: {
+       start: {
+             line: 1,
+             column: 1
+        },
+       end: {
+             line: 1,
+             column: 4
+        }
+    }
+};
+let {loc} = node;
+console.log(loc.start.line); // 1
+console.log(start.column); // 1
 		</script>
 	</body>
 </html>
