@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>京东招聘</title>
+	<link rel="stylesheet" href="/campusnew3/css/base.css"/>
+	<link rel="stylesheet" href="/campusnew/css/resume.css"/>
+	<link rel="stylesheet" href="/campus/css/position.css"/>
+    <style>
+        .webuploader-container {
+            padding:20px 60px 7px 8px;
+            width:150px;
+            height:45px;
+        }
+        .webuploader-element-invisible {
+            position: absolute !important;
+            clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+            clip: rect(1px,1px,1px,1px);
+        }
+        .webuploader-pick {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            padding: 5% 5% 5% 5%;
+            color: #fff;
+            text-align: center;
+            border-radius: 3px;
+            overflow: hidden;
+            background-color:#e4393c;
+
+        }
+        .tit-nam {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            padding: 5% 20% 5% 5%;
+            color: #000;
+            text-align: center;
+            border-radius: 3px;
+            overflow: hidden
+        }
+        .toSSC {
+            padding: 0px 20px 0px 1100px;
+        }
+
+        #filePicker div:nth-child(2) {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    </style>
+</head>
+<body>
+<script>
+	var phaseStateShow = eval({"0":"回收站","1":"初筛","100":"内推","25":"OFFER","15":"复试","5":"笔试","6":"初筛群面","50":"协议实习","30":"入职","20":"HR面试","10":"初试"});
+</script>
+<!-- 通用顶栏 -->
+<script src="/campus/js/libs/jquery.js"></script>
+<script src="/campus/js/footer.js"></script>
+<div>
+  <div style="display: block;
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    z-index: 99999;
+    bottom: 80px;
+    right: 48px;
+    cursor: pointer;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in;animation-name: zoomIn;">
+    <img onclick="window.open('https://jtalk.jd.com?entrance=24211&source=web&companyId=1');" style="height:80px"
+         src="http://storage.360buyimg.com/doc.campus.local/campus_bot_log.png"/>
+  </div>
+</div>
+<!-- 通用顶栏 -->
+<div class="header">
+  <div class="wrap">
+    <!-- logo -->
+    <a href="/">
+      <div class="logo">京东校园招聘</div>
+    </a>
+
+    <!-- 登录栏 -->
+    <div class="login">
+      <!-- 登录栏 未登录状态 -->
+                  <!-- 登陆栏 已登录状态 -->
+          <ul class="login-list J-login-list">
+            <li class="login-info" style="line-height: 45px;">
+              <span>欢迎您，jd_553f881462f66</span><i></i></li>
+            <li style="line-height: 45px;"><a href="/web/resume/resume_index">我的简历</a></li>
+            <li style="line-height: 45px;"><a href="/web/apply/myjob">职位申请</a></li>
+            <li class="login-out" style="line-height: 45px;"><a onclick="logout();" ;
+                                                                href="javascript:;">退出</a></li>
+          </ul>
+            </div>
+
+    <!-- 导航 -->
+    <ul class="nav">
+      <!-- class有  nav-curr  则为当前选中 -->
+      <li><a href="/" id="a1" class="nav-link nav-curr" onclick="changeStyle(1)">首&nbsp;&nbsp;页</a>
+      </li>
+      <li><a href="/web/job/job_index?t=6&dicCode=1" id="a6" class="nav-link J-nav-sub">招聘职位</a>
+      </li>
+      <!--<li><a href="/web/static/forward?to=property-layout&t=5" id="a5" class="nav-link J-nav-sub">产业布局</a></li>-->
+
+      <li><a href="/web/talk/index?t=4" id="a4" class="nav-link">招聘流程</a></li>
+      <!--  <li><a href="/web/message/announcement_index?t=7" id="a7" class="nav-link">消息公告</a></li>-->
+
+    
+      <!--  *****************  -->
+      <li>
+        <a href="javascript:void(0)" id="a11"
+           class="nav-link J-nav-sub ">技术大赛</a>
+        <div class="nav-sub J-nav-sub-list" style="display: none;">
+          <a href="http://jddc.jd.com" target="_blank">JDDC大赛</a>
+          <a href="https://jdata.jd.com/html/list.html" target="_blank">JDATA算法大赛</a>
+                </div>
+      </li>
+      <!--  ******************  -->
+      <li><a href="/web/message/recruit_help?t=9" id="a9" class="nav-link">招聘帮助</a></li>
+      <li>
+        <a href="https://about.jd.com/" target="_blank" id="a2" class="nav-link J-nav-sub ">关于京东</a>
+      </li>
+      <!--
+      <li><a href="/web/static/forward?to=about-jd&t=2" id="a2" class="nav-link J-nav-sub">关于京东</a></li>
+      <li><a href="/web/static/forward?to=video_list&t=8" id="a8" class="nav-link J-nav-sub">校招视频</a></li>
+       -->
+              <!--
+      <li><a href="/web/static/forward?to=announcement&t=7" id="a7" class="nav-link">消息公告</a></li>
+      -->
+    </ul>
+
+  </div>
+
+  <!-- 分享栏 -->
+  <div class="share" style="z-index: 999">
+    <ul>
+      <li class="share-wechat">
+        <a href="javascript:;"></a>
+        <div class="share-info"><img src="/campusnew3/img/wechatQR.jpg" alt=""
+                                     style="z-index: 999"></div>
+      </li>
+      <li class="share-weibo">
+        <a href="javascript:;"></a>
+        <div class="share-info"><img src="/campusnew3/img/weiboQR.png" alt=""
+                                     style="z-index: 999;width: 103px;height: 103px;"></div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<script>
+  try {
+    $(function () {
+      var i = "";
+      if (i != "" && i != "null") {
+        $("#a1").removeClass('nav-curr');
+        $("#a" + i).addClass(' nav-curr');
+      }
+
+//		$('.share-wechat').mouseover(
+//				function () {
+//                    $('.share .share-info').css("display","block");
+//                }
+//		);
+//        $('.share-wechat').mouseout(
+//                function () {
+//                    $('.share .share-info').css("display","none");
+//                }
+//        );
+    });
+
+  } catch (e) {
+  }
+
+</script>
+<!-- 简历头部 -->
+<div class="resume-header">
+	<div class="wrap">
+		<ul class="resume-header-l">
+			<li class="resume-my-application "><a href="/web/resume/resume_index">我的简历</a></li>
+			<li class="seperator">|</li>
+			<li class="resume-my-resume resume-header-selected"><a href="#">我申请的职位</a></li>
+		</ul>
+		<div class="resume-header-r">
+			<div class="resume-progress-bar-wrapper">
+				<div class="resume-progress-bar" style="width: 100%;"></div>
+			</div>
+			<div class="resume-progress-percent"><span>100</span>%<b>简历完整度</b></div>
+		</div>
+	</div>
+</div>
+<!-- 遮罩层 -->
+<div class="jd-full-mask hide"></div>
+<!-- 主体内容 -->
+<div class="my-jobs-main">
+	<div class="wrap">
+		<!--
+		<ul class="tabs-nav">
+	    	<li class="active">申请中</li>
+	    	<li>暂停中</li>
+	    	<li>已结束</li>
+	  	</ul>
+	  	-->
+        <input type="hidden" id="currentObjId" value="" />
+        <input type="hidden" id="loginAccount" value="jd_553f881462f66" />
+		<div id="appliveing">
+		<ul class="resume-job-list">
+									<li class="resume-job-box">
+				<input type="hidden" id="jobObjectiveId" value="973" />
+				<input type="hidden" id="phaseStateConfig973" value="1,5,10,15,20,25,30" />
+				<input type="hidden" id="currentPhaseState973" value="25" />
+                <input type="hidden" id="currentProcessState973" value="0" />
+				<input type="hidden" id="currentProcessStateName973" value="HR面试完成" />
+				<input type="hidden" id="applyTimeShow973" value="2020-07-15 22:08" />
+                <input type="hidden" id="recuitTypeName973" value="校园招聘" />
+                <input type="hidden" id="token973" value="Wzk3M11uZXc=
+" />
+
+                <div onclick="showDeail(this,973)" style="cursor:pointer;" class="resume-job-box-header">
+										<div class="label-flag red">
+	  						  					<span class="text">志愿1</span>
+	  				</div>
+	  									<div class="left">
+						<div class="title">Web前端开发工程师</div>
+		  				<div class="desc">
+		  							  					<span>2021-JDS</span>
+	  					</div>
+					</div>
+					<div class="right">
+		  				<div id="jobPhaseMsg973" class="content">
+		  				</div>
+		  			</div>
+				</div>
+				<div id="jobBoxContent973" class="resume-job-box-content">
+				</div>
+				                			                                    <div class="J-job-box-btns">
+                                                                            </div>
+			</li>
+												
+			
+			
+			<!-- 
+					S: 职位详情
+	
+					如果想要展开职位详情，则加上 `active` 这个 class
+					
+			<li class="resume-job-box">
+				<div onclick="showDeail(this)" style="cursor:pointer;" class="resume-job-box-header">
+					<div class="label-flag red">
+	  					<span class="text">志愿1</span>
+	  				</div>
+		  			<div class="left">
+		  				<div class="title">移动产品经理</div>
+		  				<div class="desc">
+		  					京东商城-职能研发部<span>实习生</span>
+	  					</div>
+		  			</div>
+		  			<div class="right">
+		  				<div class="content">2015-06-10 12:11 笔试邀请，请参加笔试</div>
+		  			</div>
+		  		</div>
+		  		<div class="resume-job-box-content">
+			   	  <ul class="resume-apply-steps">
+				      <li class="passed">
+				        <div class="text">投递</div>
+				      </li>
+				      <li class="active">
+				        <div class="text">笔试</div>
+				      </li>
+				      <li>
+				        <div class="text">一面</div>
+				      </li>
+				      <li>
+				        <div class="text">二面</div>
+				      </li>
+				      <li>
+				        <div class="text">终面</div>
+				      </li>
+				    </ul>
+	
+				    <ul class="resume-apply-agenda-list">
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">面试邀请，请参加一面面试</div>
+				    			<div class="desc">面试时间：2015-05-20 10：00 面试地点：北京市朝阳区北辰世纪中心A座2层</div>
+				    		</div>
+				    	</li>
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">通过笔试，等待安排面试</div>
+				    		</div>
+				    	</li>
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">请参加笔试</div>
+				    			<div class="desc">笔试时间：2015-05-20 10：00 笔试地点：北京市朝阳区北辰世纪中心A座2层</div>
+				    		</div>
+				    	</li>
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">投递简历</div>
+				    		</div>
+				    	</li>
+				    </ul>
+		  		</div>
+			</li>
+			-->
+			<!-- E: 职位详情 -->
+	
+				
+			<!-- 
+					S: 职位详情
+	
+					如果想要展开职位详情，则加上 `active` 这个 class
+					
+			<li class="resume-job-box">
+		  		<div onclick="showDeail(this)" style="cursor:pointer;" class="resume-job-box-header">
+		  			<div class="left">
+		  				<div class="title">移动产品经理</div>
+		  				<div class="desc">
+		  					京东商城-职能研发部<span>实习生</span>
+	  					</div>
+		  			</div>
+		  			<div class="right">
+		  				<div class="content">2015-06-10 12:11 笔试邀请，请参加笔试</div>
+		  			</div>
+		  		</div>
+	
+		  		<div class="resume-job-box-content">
+			   	  <ul class="resume-apply-steps">
+				      <li class="passed">
+				        <div class="text">投递</div>
+				      </li>
+				      <li class="active">
+				        <div class="text">笔试</div>
+				      </li>
+				      <li>
+				        <div class="text">一面</div>
+				      </li>
+				      <li>
+				        <div class="text">二面</div>
+				      </li>
+				      <li>
+				        <div class="text">终面</div>
+				      </li>
+				    </ul>
+	
+				    <ul class="resume-apply-agenda-list">
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">面试邀请，请参加一面面试</div>
+				    			<div class="desc">面试时间：2015-05-20 10：00 面试地点：北京市朝阳区北辰世纪中心A座2层</div>
+				    		</div>
+				    	</li>
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">通过笔试，等待安排面试</div>
+				    		</div>
+				    	</li>
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">请参加笔试</div>
+				    			<div class="desc">笔试时间：2015-05-20 10：00 笔试地点：北京市朝阳区北辰世纪中心A座2层</div>
+				    		</div>
+				    	</li>
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">投递简历</div>
+				    		</div>
+				    	</li>
+				    </ul>
+		  		</div>
+		  	</li>
+		  	-->
+			<!-- E: 职位详情 -->
+			
+			<!-- 
+					S: 职位详情
+	
+					如果想要展开职位详情，则加上 `active` 这个 class
+					
+			<li class="resume-job-box">
+		  		<div onclick="showDeail(this)" style="cursor:pointer;" class="resume-job-box-header">
+		  			<div class="left">
+		  				<div class="title">iOS开发工程师</div>
+		  				<div class="desc">
+		  					京东商城-职能研发部<span>实习生</span>
+	  					</div>
+		  			</div>
+		  			<div class="right">
+		  				<div class="content">2015-06-10 12:11 笔试邀请，请参加笔试</div>
+		  			</div>
+		  		</div>
+					
+		  		<div class="resume-job-box-content">
+			   	  <ul class="resume-apply-steps">
+				      <li class="passed">
+				        <div class="text">投递</div>
+				      </li>
+				      <li class="active">
+				        <div class="text">笔试</div>
+				      </li>
+				      <li>
+				        <div class="text">一面</div>
+				      </li>
+				      <li>
+				        <div class="text">二面</div>
+				      </li>
+				      <li>
+				        <div class="text">终面</div>
+				      </li>
+				    </ul>
+	
+				    <ul class="resume-apply-agenda-list">
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">面试邀请，请参加一面面试</div>
+				    			<div class="desc">面试时间：2015-05-20 10：00 面试地点：北京市朝阳区北辰世纪中心A座2层</div>
+				    		</div>
+				    	</li>
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">通过笔试，等待安排面试</div>
+				    		</div>
+				    	</li>
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">请参加笔试</div>
+				    			<div class="desc">笔试时间：2015-05-20 10：00 笔试地点：北京市朝阳区北辰世纪中心A座2层</div>
+				    		</div>
+				    	</li>
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">投递简历</div>
+				    		</div>
+				    	</li>
+				    </ul>
+		  		</div>
+		  	</li>
+		  	-->
+		  	<!-- E: 职位详情 -->
+			
+			<!-- 
+					S: 职位详情
+	
+					如果想要展开职位详情，则加上 `active` 这个 class
+					
+			<li class="resume-job-box">
+		  		<div onclick="showDeail(this)" style="cursor:pointer;" class="resume-job-box-header">
+		  			<div class="left">
+		  				<div class="title">移动产品经理</div>
+		  				<div class="desc">
+		  					京东商城-职能研发部<span>实习生</span>
+	  					</div>
+		  			</div>
+		  			<div class="right">
+		  				<div class="content">2015-06-10 12:11 笔试邀请，请参加笔试</div>
+		  			</div>
+		  		</div>
+	
+		  		<div class="resume-job-box-content">
+			   	  <ul class="resume-apply-steps">
+				      <li class="passed">
+				        <div class="text">投递</div>
+				      </li>
+				      <li class="passed">
+				        <div class="text">笔试</div>
+				      </li>
+				      <li class="active">
+				        <div class="text">一面</div>
+				      </li>
+				      <li>
+				        <div class="text">二面</div>
+				      </li>
+				      <li>
+				        <div class="text">终面</div>
+				      </li>
+				    </ul>
+	
+						<div class="resume-apply-examroom">
+							<label>请选择面试场次：</label>
+							-->
+							<!-- 
+								若选中任意选项，则加上 `selected` 的 class 和 data-value="xxx"
+								点击确定按钮后，再加上 `confirmed` 的 class，确保用户不能再次编辑
+	
+								JS 已实现，请根据实际情况修改
+							 
+							<div class="resume-examroom-selector">
+								<div class="resume-examroom-body"></div>
+								<ul class="resume-examroom-options">
+								-->
+									<!--
+										被选中的选项，加上 `active` 这个 class
+										JS 已实现，请根据实际情况修改
+									 
+									<li data-value="0">
+										<div class="resume-examroom-roomnum">集团电子科技A307</div>
+										<div class="resume-examroom-time">面试时间：<span>2015-05-20 10:00</span></div>
+										<div class="resume-examroom-location">面试地点：<span>北京市朝阳区北辰世纪中心A座2层</span></div>
+									</li>
+									<li data-value="1">
+										<div class="resume-examroom-roomnum">集团电子科技A308</div>
+										<div class="resume-examroom-time">面试时间：<span>2015-05-11 10:00</span></div>
+										<div class="resume-examroom-location">面试地点：<span>北京市朝阳区北辰世纪中心A座2层</span></div>
+									</li>
+									<li data-value="2">
+										<div class="resume-examroom-roomnum">集团电子科技A309</div>
+										<div class="resume-examroom-time">面试时间：<span>2015-05-12 10:00</span></div>
+										<div class="resume-examroom-location">面试地点：<span>北京市朝阳区北辰世纪中心A座2层</span></div>
+									</li>
+								</ul>
+							</div>
+							<button class="resume-examroom-select-btn">尚未选择</button>
+						</div>
+	
+				    <ul class="resume-apply-agenda-list">
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">面试邀请，请参加一面面试</div>
+				    			<div class="desc">面试时间：2015-05-20 10：00 面试地点：北京市朝阳区北辰世纪中心A座2层</div>
+				    		</div>
+				    	</li>
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">通过笔试，等待安排面试</div>
+				    		</div>
+				    	</li>
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">请参加笔试</div>
+				    			<div class="desc">笔试时间：2015-05-20 10：00 笔试地点：北京市朝阳区北辰世纪中心A座2层</div>
+				    		</div>
+				    	</li>
+				    	<li class="resume-apply-agenda">
+				    		<div class="left">
+				    			<div class="date">2014-06-10 12:11</div>
+				    		</div>
+				    		<div class="right">
+				    			<div class="content">投递简历</div>
+				    		</div>
+				    	</li>
+				    </ul>
+		  		</div>
+		  	</li>
+		  	-->
+			<!-- E: 职位详情 -->
+		</ul>
+		 
+		<div>
+		
+	</div>
+
+
+
+<!--
+	<div class="wrap" id="mainDiv"> -->
+		<!-- S 无结果 -->
+		<!-- <div class="no-jobs">当前还没有申请任何职位</div> -->
+		<!-- E 无结果 -->
+
+		<!-- S 有结果 
+		<form id="J-my-jobs-form" action="asdad" method="post">
+			<input type="hidden" value=":" name="J-jobs-1"/>
+			<input type="hidden" value=":" name="J-jobs-2"/>
+			<input type="hidden" value="" id="rtnmsg"/>
+			<input type="hidden" value="" id="rjoId"/>
+			<input type="hidden" value="" id="phase"/>
+			<input type="hidden" value="" id="process"/>
+			<input type="hidden" value="" id="currentJobInfoName"/>
+			
+					</form> -->
+		<!-- E 有结果 
+	</div>
+-->
+</div>
+
+
+<div id="popup3" class="jd-popup-box hide popup-sm" style="width: 635px; height: 435px;padding: 25px">
+    <div data-cid="w23691FE8EC1598975754824" data-link_cid="" class="widget rounded_rect hleft vmiddle"
+         style="width: 594px; height: 112px; left: 446px; top: 231px; z-index: 23; border-color: rgb(212, 212, 216); border-width: 1px; border-style: solid; font-size: 14px; padding: 0px; text-align: left; line-height: 20px; font-weight: normal; font-style: normal; opacity: 1;">
+        <div class="text" style="padding: 0px;"><p> 说明：</p>
+            <p>请您在3个自然日内打印offer邮件中的附件1-《京东2021年度应届毕业生录用函》与附件2-《京东2021年度应聘者健康承诺书》，
+                确定签字后扫描生成PDF文件并上传，文件命名方式为“文件名-姓名“（例如：京东2021年度应届毕业生录用函-张三）</p>
+        </div>
+        <div class="region gesture " style="display: none;"></div>
+    </div>
+    <div class="J-job-box-btns files-upload " id="files-upload1">
+        <div id="multi-file" style="width:55%" class="upload-btn filePicker">添加文件</div>
+    </div>
+    <div id="file-list" style="padding-left: 125px">
+        <a id="offer-file"></a>
+    </div>
+
+    <!-- 底部按钮 -->
+    <div class="footer-area">
+        <button class="jd-confirm-btn">提交</button>
+        <button class="jd-cancel-btn">取消</button>
+    </div>
+</div>
+
+
+<div id="popup5" class="jd-popup-box hide popup-sm" style="width: 635px; height: 435px;padding: 25px">
+    <span>拒绝原因</span>
+    <div style="display: grid;padding-left: 20px">
+        <label style="padding-top: 5px;padding-bottom: 5px"><input type="radio" id="salary" name="reasonItem" value="薪酬">薪酬</label>
+        <label style="padding-top: 5px;padding-bottom: 5px"><input type="radio" id="hukou" name="reasonItem" value="户口">户口</label>
+        <label style="padding-top: 5px;padding-bottom: 5px"><input type="radio" id="workPlace" name="reasonItem" value="工作地">工作地</label>
+        <label style="padding-top: 5px;padding-bottom: 5px"><input type="radio" id="position" name="reasonItem" value="工作岗位">工作岗位</label>
+        <label style="padding-top: 5px;padding-bottom: 5px"><input type="radio" id="furtherEducation" name="reasonItem" value="升学或考取公务员">升学或考取公务员</label>
+        <label style="padding-top: 5px;padding-bottom: 5px"><input type="radio" id="other" name="reasonItem" value="其他原因">其他原因</label>
+        <input style="padding-left: 20px" type="text" value="" id="otherReason" placeholder="请填写拒绝原因" disabled="disabled">
+    </div>
+
+    <!-- 底部按钮 -->
+    <div class="footer-area">
+        <button class="jd-confirm-btn">提交</button>
+        <button class="jd-cancel-btn">取消</button>
+    </div>
+</div>
+
+<!-- 窗口4 2015-09-06 -->
+<div id="popup4" class="jd-popup-box hide popup-sm">
+  
+  <!-- 内容 -->
+  <div class="content-area">
+  	<p class="black-text">确认要删除投递？</p>
+  </div>
+
+  <!-- 底部按钮 -->
+  <div class="footer-area">
+    <button class="jd-confirm-btn">确定</button>
+    <button class="jd-cancel-btn">取消</button>
+  </div>
+</div>
+<!-- 窗口4 2015-09-06 -->
+
+<!-- footer -->
+<div class="footer">
+  <div class="wrap">
+    <ul class="friend-link">
+      <li><a href="//www.jd.com" target="_blank">京东(JD.COM)</a></li>
+      <li>|</li>
+      <li><a href="//zhaopin.jd.com" target="_blank">京东招聘</a></li>
+      <li>|</li>
+      
+      <li><a
+          href="https://prodev.jd.com/mall/active/34fyJhzURQKz7U9YWPyHWShSHLMF/index.html?babelChannel=ttt1"
+          target="_blank">校园特权</a></li>
+      <li>|</li>
+     
+      <li><a href="//help.jd.com/index.html" target="_blank">客服中心</a></li>
+    </ul>
+    <span class="copyright">
+			Copyright © 2004-2020  京东JD.com 版权所有
+		</span>
+    <a href="//jdc.jd.com/" title="京东用户体验设计部" target="_blank" class="jdc-link"></a>
+  </div>
+</div>
+<script type="text/javascript">
+  var jaq = jaq || [];
+  jaq.push(['account', 'JA2016_113480']); //站点编号
+  jaq.push(['domain', 'campus.jd.com']);  //站点域名
+  jaq.push(['topic', '_topic_']); //topic
+  (function () {
+    var ja = document.createElement('script');
+    ja.type = 'text/javascript';
+    ja.async = true;
+    ja.src = ('https:' == document.location.protocol ? 'https://wlssl' : 'http://wl')
+        + '.jd.com/joya.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ja, s);
+  })();
+</script> <script src="/campus/js/libs/jquery.js"></script>
+    <script src="/campus/js/libs/jquery.validate.js"></script>
+    <script type="text/javascript" src="/campus/js/main.js"></script>
+	<script src="/campus/js/libs/messages_zh.js"></script>
+    <script src="/campus/js/myjob.js"></script>
+    <script type="text/javascript" src="/static/webuploader/webuploader.js"></script>
+    <script src="/campus/js/uploadFiles.js"></script>
+<script type="text/javascript" src="/static/jsutils/dateformat.js"></script>
+
+<script>
+
+    function removeFocus(object){
+        object.blur();
+    }
+
+
+function getShow(val) {
+	var tmp = "" ;
+	if (val.indexOf(":")!= -1) {
+		tmp = val.substring(val.indexOf(":") + 1);
+	}	
+	return tmp ;
+}
+
+var myJobs = {
+	form: $("#J-my-jobs-form"),
+	// 初始
+	myJobsInit: function() {
+		//this.myJobsSubmit();
+		this.myJobsRanking();
+		this.myJobsRemove();
+	},
+	myJobsRanking: function() {
+		var input1 = $('input[name="J-jobs-1"]');
+		var input2 = $('input[name="J-jobs-2"]');
+		$(".jobs-options").on("click", ".J-jobs-move", function() {
+			$('.jobs-title').eq(0).text(getShow(input2.val()));
+			$('.jobs-title').eq(1).text(getShow(input1.val()));
+			var i = input2.val();
+			input2.val(input1.val());
+			input1.val(i);
+		});
+	},
+	myJobsRemove: function() {
+		//var html = '<a href="/web/apply/current?recType=01&t=3" class="jobs-vacancy"><span></span>继续添加职位</a>';
+		var html = '<a href="/web/static/forward?to=jd-run&t=3" class="jobs-vacancy"><span></span>继续添加职位</a>';
+		var input1 = $('input[name="J-jobs-1"]');
+		var input2 = $('input[name="J-jobs-2"]');
+		/*$(".jobs-options").on("click", ".J-jobs-del", function() {
+			if ( == 1 &&  == 0) {
+				if($(this).closest('.last-row').length) {
+						$(this).parent().prev().parent().addClass('jobs-wrapper-no-bg').html(html);
+						input2.remove();						
+						var url = "/web/apply/toSubmit?id=&flag=delPart&jobName=twoJobInfoName";
+						jQuery.get(url , function(data){
+	    								if (data.RTNMSG == "toComplete") {
+	    										alert("简历信息不完整，请先完善简历");
+	    								}else {
+	    									alert("成功删除职位申请");							
+	    								}
+	    							},  "json");
+					} else if (!$(this).parents('.row').next().find('.jobs-vacancy').length) {				
+						var nextRow = $(this).parents('.row').next();
+						$(this).prev().hide().
+						parent().prev().text(getShow(input2.val()));
+						nextRow.find('.jobs-wrapper').addClass('jobs-wrapper-no-bg').html(html);
+						input1.val(input2.val());
+						input2.remove();
+						
+						var url = "/web/apply/toSubmit?id=&flag=delPart&jobName=firstJobInfoName";
+						jQuery.get(url , function(data){
+	    								if (data.RTNMSG == "toComplete") {
+	    										alert("简历信息不完整，请先完善简历");
+	    								}else {
+	    									alert("成功删除职位申请");							
+	    								}
+	    							},  "json");
+						
+					} else {
+						if(confirm("确认删除所有的职位申请吗？")){
+							var url = "/web/apply/toSubmit?id=&flag=delAll"; 
+							var noJob = '<div class="no-jobs">当前还没有申请任何职位</div>';
+							$('#J-my-jobs-form').hide().parent().html(noJob);
+    						
+	    					jQuery.get(url , function(data){
+	    								if (data.RTNMSG == "toComplete") {
+	    										alert("简历信息不完整，请先完善简历");
+	    								}else {
+	    									alert("成功删除所有职位申请");							
+	    								}
+	    							},  "json");
+	    					return false;     
+							//location.reload() ;
+						}
+				}
+			}else {
+						alert("您的简历已经经过初始阶段，不能删除简历");		
+					}
+			});*/
+	}
+}
+myJobs.myJobsInit();
+</script>
+
+<!-- 展开面试场次选择框的js -->
+<script type="text/javascript">
+
+	// 设置
+	var placeholder = '尚未选择面试场次'
+
+	var $sel = $('.resume-examroom-selector')
+	var $selbody = $sel.children('.resume-examroom-body')
+	var $selbtn = $sel.next('.resume-examroom-select-btn')
+	var $selopts = $sel.find('.resume-examroom-options > li')
+	var $confirmBtn = $('.jd-confirm-btn')
+	var $cancelBtn = $('.jd-cancel-btn')
+
+	var confirmed = false
+
+	$sel
+		.on('mouseover', function() {
+			if (!confirmed)
+				$(this).addClass('active')
+		})
+		.on('mouseout', function() {
+			$(this).removeClass('active')
+		})
+		
+	if ($sel.data('value') === undefined) {
+		$selbody.text(placeholder)
+	}
+	
+</script>
+
+</body>
+</html>

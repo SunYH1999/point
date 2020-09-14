@@ -1,6 +1,7 @@
 # js执行机制
 
-[aa](https://juejin.im/post/6844903512845860872)
+[aa](https://blog.csdn.net/highboys/article/details/79110116)
+[失效链接](https://juejin.im/post/6844903512845860872)
 
 
 <img src="./img/执行栈.jpg" width=500px>
@@ -17,8 +18,14 @@
 
 ### 宏队列与微队列
 
+<img src="./img/宏任务微任务.jpg" width=500px>
+
 Js 中，有两类任务队列：宏任务队列（macro tasks）和微任务队列（micro tasks）。宏任务队列可以有多个，微任务队列只有一个
 宏任务：script（全局任务）, setTimeout, setInterval, setImmediate, I/O, UI rendering.
 微任务：process.nextTick （node.js中进程相关的对象）, Promise, Object.observer, MutationObserver。
 
-<img src="./img/宏任务微任务.jpg" width=500px>
+1. 执行一个宏任务，过程中如果遇到微任务，就将其放到微任务的“事件队列”里
+
+2. 当前宏任务执行完成后，会查看微任务的“事件队列”，并将里面全部的微任务依次执行完
+
+3. 重复以上2步骤，结合event loop(1) event loop(2)，就是更为准确的JS执行机制了

@@ -103,23 +103,52 @@
 
 
 
- let node = {
-     type: "Identifier",
-     name: "foo",
-     loc: {
-       start: {
-             line: 1,
-             column: 1
-        },
-       end: {
-             line: 1,
-             column: 4
-        }
-    }
-};
-let {loc} = node;
-console.log(loc.start.line); // 1
-console.log(start.column); // 1
+//  let node = {
+//      type: "Identifier",
+//      name: "foo",
+//      loc: {
+//        start: {
+//              line: 1,
+//              column: 1
+//         },
+//        end: {
+//              line: 1,
+//              column: 4
+//         }
+//     }
+// };
+// let {loc} = node;
+// console.log(loc.start.line); // 1
+// console.log(start.column); // 1
+
+// for(var i=0;i<4;i++){
+// 	setTimeout(function(){
+// 		console.log(i)
+// 	},1000)
+// }
+
+// setTimeout(function(){
+//  		console.log(1)
+//  	},3000)
+// 	new Promise(function(resolve){
+// 		console.log(2);
+// 		let a=12;
+// 		for(let i=0;i<100000;i++){
+// 			a+=i;
+// 		}
+// 		resolve();
+// 	}).then(function(){
+// 		setTimeout(function(){
+// 			console.log(3)
+// 		})
+// 		console.log(4)
+// 	})
+// 	console.log(5)
+
+var arr=[2,3,4]
+console.log(typeof(arr))
+
+
 		</script>
 	</body>
 </html>
