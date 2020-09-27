@@ -5,45 +5,43 @@
 		<title></title>
 	</head>
 	<body>
-		<script type="text/javascript">
-			console.log('1');
-
-			setTimeout(function() {
-				console.log('2');
-				process.nextTick(function() {
-					console.log('3');
-				})
-				new Promise(function(resolve) {
-					console.log('4');
-					resolve();
-				}).then(function() {
-					console.log('5')
-				})
-			})
+		<div class="p">
+			<div class="a">1</div>
+			<div class="b">2</div>
+			<div class="c">3</div>
+		</div>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
 			
-			process.nextTick(function() {
-				console.log('6');
-			})
-			
-			new Promise(function(resolve) {
-				console.log('7');
-				resolve();
-			}).then(function() {
-				console.log('8')
-			})
-
-			setTimeout(function() {
-				console.log('9');
-				process.nextTick(function() {
-					console.log('10');
-				})
-				new Promise(function(resolve) {
-					console.log('11');
-					resolve();
-				}).then(function() {
-					console.log('12')
-				})
-			})
-		</script>
+			.p{
+				width: 600px;
+				height: 200px;
+				background-color: #128C00;
+			}
+			.a{
+				
+				width: 50px;
+				height: 50px;
+				background-color: wheat;
+				float: left;
+			}
+			.b{
+				
+				width: 50px;
+				height: 50px;
+				background-color: saddlebrown;
+				float: left;
+			}
+			.c{
+				
+				width: 50px;
+				height: 50px;
+				background-color: violet;
+				float: left;
+			}
+		</style>
 	</body>
 </html>
