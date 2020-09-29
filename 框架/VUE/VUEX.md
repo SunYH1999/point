@@ -36,5 +36,5 @@ Action 通常是异步的，要知道 action 什么时候结束或者组合多�
 一个 store.dispatch 在不同模块中可以触发多个 action 函数。在这种情况下，只有当所有触发函数完成后，返回的 Promise 才会执行。
 
 新增：为什么不直接分发mutation,而要通过分发action之后提交 mutation变更状态
-mutation 必须同步执行，我们可以在 action 内部执行异步操作
+m009-utation 必须同步执行，我们可以在 action 内部执行异步操作
 可以进行一系列的异步操作，并且通过提交 mutation 来记录 action 产生的副作用（即状态变更）

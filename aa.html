@@ -11,37 +11,63 @@
 			<div class="c">3</div>
 		</div>
 		<style type="text/css">
-			*{
+			* {
 				margin: 0;
 				padding: 0;
 			}
-			
-			.p{
+
+			.p {
 				width: 600px;
 				height: 200px;
 				background-color: #128C00;
 			}
-			.a{
-				
+
+			.a {
+
 				width: 50px;
 				height: 50px;
 				background-color: wheat;
 				float: left;
 			}
-			.b{
-				
+
+			.b {
+
 				width: 50px;
 				height: 50px;
 				background-color: saddlebrown;
 				float: left;
 			}
-			.c{
-				
+
+			.c {
+
 				width: 50px;
 				height: 50px;
 				background-color: violet;
 				float: left;
 			}
 		</style>
+		<script type="text/javascript">
+			console.log('script start')
+			setTimeout(function() {
+				console.log('settimeout')
+			})
+			var promise1 = new Promise(function(resolve) {
+				console.log('promise1')
+				resolve()
+				console.log('promise1 end')
+			}).then(function() {
+				console.log('promise2')
+			})
+			async function async1() {
+				console.log('async1 start');
+				await async2();
+				console.log('async1 end')
+			}
+			async function async2() {
+				console.log('async2')
+			}
+			async1();
+			console.log('script end')
+		</script>
 	</body>
 </html>
