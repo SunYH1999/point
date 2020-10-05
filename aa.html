@@ -47,27 +47,133 @@
 			}
 		</style>
 		<script type="text/javascript">
+			// script start
+			// promise1
+			// promise1 end
+			// async1 start
+			// async2
+			// promise2
+			// async1 end
+			// script end
+			// settimeout
+			
+			// script start
+			// promise1
+			// promise1 end
+			// async1 start
+			// async2
+			// script end
+			// promise2
+			// async1 end
+			// settimeout
+			
+			
+			
+			// console.log('script start')
+			// setTimeout(function() {
+			// 	console.log('settimeout')
+			// })
+			// var promise1 = new Promise(function(resolve) {
+			// 	console.log('promise1')
+			// 	resolve()
+			// 	console.log('promise1 end')
+			// }).then(function() {
+			// 	console.log('promise2')
+			// })
+			// async function async1() {
+			// 	console.log('async1 start');
+			// 	await async2();
+			// 	console.log('async1 end')
+			// }
+			// async function async2() {
+			// 	console.log('async2')
+			// }
+			// async1();
+			// console.log('script end')
+			
+			
+			
+			
+			
+			// script star
+			// async1 start
+			// async2
+			// promise1
+			// script end
+			// async1 end
+			// promise2
+			// setTimeout
+			
+			
+			// script start
+			// aa.html:108 async1 start
+			// aa.html:113 async2
+			// aa.html:121 promise1
+			// aa.html:126 script end
+			// aa.html:110 async1 end
+			// aa.html:124 promise2
+			// aa.html:117 setTimeout
+			
+			// async function async1(){
+			//     console.log('async1 start')
+			//     await async2()
+			//     console.log('async1 end')
+			// }
+			// async function async2(){
+			//     console.log('async2')
+			// }
+			// console.log('script start')
+			// setTimeout(function(){
+			//     console.log('setTimeout')
+			// },0)  
+			// async1();
+			// new Promise(function(resolve){
+			//     console.log('promise1')
+			//     resolve();
+			// }).then(function(){
+			//     console.log('promise2')
+			// })
+			// console.log('script end')
+
+			
+			// script start
+			// async1 start
+			// async2
+			// promise1
+			// script end
+			// async1 end
+			// promise2
+			// setTimeout
+			
+			async function async1() {
+			  console.log('async1 start')
+			  await async2()
+			  console.log('async1 end')
+			}
+			 
+			async function async2() {
+			  console.log('async2')
+			}
+			 
 			console.log('script start')
 			setTimeout(function() {
-				console.log('settimeout')
-			})
-			var promise1 = new Promise(function(resolve) {
-				console.log('promise1')
-				resolve()
-				console.log('promise1 end')
-			}).then(function() {
-				console.log('promise2')
-			})
-			async function async1() {
-				console.log('async1 start');
-				await async2();
-				console.log('async1 end')
-			}
-			async function async2() {
-				console.log('async2')
-			}
-			async1();
+			  console.log('setTimeout')
+			}, 0)
+			 
+			async1(); 
+			   
+			new Promise( function( resolve ) {
+			 console.log('promise1')
+			 resolve();
+			} ).then( function() {
+			 console.log('promise2')
+			} )
+			 
 			console.log('script end')
+			
+			
+			
+			
 		</script>
 	</body>
 </html>
