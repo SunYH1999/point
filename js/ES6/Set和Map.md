@@ -36,4 +36,8 @@ map的键是不能修改的，但是其键对应的值是可以修改的
 
 ### map和object区别
 
+在 Object 中， key 必须是简单数据类型（整数，字符串或者是 symbol），而在 Map 中则可以是 JavaScript 支持的所有数据类型，也就是说可以用一个 Object 来当做一个Map元素的 key。
 
+Map 元素的顺序遵循插入的顺序，而 Object 的则没有这一特性。
+
+Map 继承自 Object 对象。
