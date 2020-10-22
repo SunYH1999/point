@@ -3,37 +3,75 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="task001.css">
 		<meta charset="utf-8">
-		
+
 	</head>
 	<body>
-		
+
 		<!-- 左侧固定列 -->
 		<div class="fixedColumn">aaa</div>
 		<!-- 右侧自适应宽度列 -->
 		<div class="flexibleColumn">aaa</div>
 		<style type="text/css">
-			html{
+			html {
 				height: 100%;
 			}
-			body{
+
+			body {
 				height: 100%;
 			}
+
 			/*左固定列*/
-			.fixedColumn{
+			.fixedColumn {
 				width: 40px;
 				height: 100%;
 				background-color: red;
 				float: left;
-				
+
 			}
+
 			/*右自适应列*/
-			.flexibleColumn{
+			.flexibleColumn {
 				width: 100%;
 				heitht: 100%;
-				background-color: blue;	
-				/* margin-left: 40px; */
+				background-color: blue;
+				/* hmargin-left: 40px; */
 			}
 		</style>
-		</style>
+		<script type="text/javascript">
+			var a = null;
+
+			var b = (function() {
+				try {
+console.log(1);
+					console.log(a);
+console.log(2);
+					console.log(typeof f);
+					var a = c = 5;
+
+					var f = function() {};
+
+					return c;
+
+				} catch (e) {
+
+					c += 1;
+
+				} finally {
+
+					c += 2;
+
+					return null;
+
+				}
+
+			})();
+console.log(3);
+			console.log(typeof(a));
+			console.log(4);
+			console.log(b);
+			console.log(5);
+
+			console.log(c);
+		</script>
 	</body>
 </html>
