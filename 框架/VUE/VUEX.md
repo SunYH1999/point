@@ -38,3 +38,18 @@ Action 通常是异步的，要知道 action 什么时候结束或者组合多�
 新增：为什么不直接分发mutation,而要通过分发action之后提交 mutation变更状态
 m009-utation 必须同步执行，我们可以在 action 内部执行异步操作
 可以进行一系列的异步操作，并且通过提交 mutation 来记录 action 产生的副作用（即状态变更）
+
+
+### 流程
+
+1、数据从state中渲染到页面；
+2、在页面通过dispatch来触发action；
+3、action通过调用commit,来触发mutation；
+4、mutation来更改数据，数据变更之后会触发dep对象的notify，通知所有Watcher对象去修改对应视图（vue的双向数据绑定原理）。
+
+
+
+
+
+
+

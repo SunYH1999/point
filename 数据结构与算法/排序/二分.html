@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//二分
+			// function search(arr,low,height,key){
+			//     height--;
+			//     if(low>height){
+			//         return -1;
+			//     }
+			//     var mid=Math.floor((low+height)/2);
+			//     if(arr[mid]==key){
+			//         return mid;
+			//     }else if(arr[mid]<key){
+			//         low=mid+1
+			//         return search(arr,low,height,key);
+			//     }else{
+			//         mid=height-1;
+			//         return search(arr,low,height,key);
+			//     }
+			// }
+			// console.log(search([1,2,3,4,5,6,7,8,9],0,8n,2))
+			
+			
+			//二分递归
+			// function binerySearch(item,arr,start,end){
+			//     var start = start || 0
+			//     var end = end || arr.length-1
+			//     var mid = Math.floor((start+end)/2)
+			
+			//     if(item === arr[mid]){
+			//         return mid
+			//     }else if(item>arr[mid]){
+			//         return binerySearch(item,arr,mid+1,end)
+			//     }else{
+			//         return binerySearch(item,arr,start,mid-1)
+			//     }
+			//     return false
+			// }
+			// var a=[1,2,3,4,5,6,7,8,9]
+			// console.log(binerySearch(5,a))
+		</script>
+	</body>
+</html>
