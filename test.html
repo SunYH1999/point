@@ -6,21 +6,21 @@
 	</head>
 	<body>
 		<script type="text/javascript">
-			var kthFactor = function(n, k) {
-				let arr = [];
-				for (let i = 1; i <= n; i++) {
-					if(n%i==0){
-						arr.push(i);
-					}
-				}
-				console.log(arr)
-				if (arr.length < k ) {
-					return -1
-				}
-				return arr[k - 1];
+			// var kthFactor = function(n, k) {
+			// 	let arr = [];
+			// 	for (let i = 1; i <= n; i++) {
+			// 		if(n%i==0){
+			// 			arr.push(i);
+			// 		}
+			// 	}
+			// 	console.log(arr)
+			// 	if (arr.length < k ) {
+			// 		return -1
+			// 	}
+			// 	return arr[k - 1];
 
-			};
-			console.log(kthFactor(4, 4))
+			// };
+			// console.log(kthFactor(4, 4))
 			
 			
 			
@@ -33,7 +33,33 @@
 			
 			//                 }
 			// 				unique( arr )
-			               
+			
+			
+			
+			
+			/**
+			 * @param {number[]} nums
+			 * @return {number}
+			 */
+			var majorityElement = function(nums) {
+			    let tag=Math.floor(nums.length/2);
+			    let map=new Map();
+			    for(let i=0;i<nums.length;i++){
+			        if(map.has(nums[i])){
+			            let k=map.get(nums[i])+1;
+			            map.set(nums[i],k);
+			            if(map.get(nums[i])>tag){
+			                return nums[i];
+			            }
+			        }else{
+			            map.set(nums[i],1);
+			            if(map.get(nums[i])>tag){
+			                return nums[i];
+			            }
+			        }
+			    }
+			};			   
+			console.log(majorityElement([1,2,2,2,3,4,5]))			   
 		</script>
 	</body>
 </html>
