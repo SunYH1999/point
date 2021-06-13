@@ -2,7 +2,7 @@
  * @Author: sunyuhang 
  * @Date: 2021-06-12 16:14:22 
  * @Last Modified by: sunyuhang
- * @Last Modified time: 2021-06-12 17:27:18
+ * @Last Modified time: 2021-06-13 10:59:49
  */
 const numberArr: number[] = [1, 2, 3]
 const stringArr: string[] = ['a', 'b', 'c']
@@ -26,4 +26,16 @@ const demo: rule[] = [
     {name: 'a', age:10},
     {name: 'b', age:11},
     {name: 'c', age:12}
+]
+
+
+
+//元组
+const arr1: [number, number, string] = [1, 2, 'string']
+
+//数组中元组
+const arr2: [number, number, string][] = [
+    [1, 2, 'string'],
+    [1, 2, 'string'],
+    [1, 2, 'string']
 ]
