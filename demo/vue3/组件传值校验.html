@@ -1,0 +1,54 @@
+<!-- 静态传值只能传string类型 -->
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script>
+    // String Boolean Array Object Function Symbol
+    const app = Vue.createApp({
+        data(){
+            return {
+                name:'123',
+                pay:()=>{
+                    alert('给你500元')
+                }
+            }
+        },
+        template: `
+            <h2>dogsun.com</h2>
+            <Son :name="name" />
+        `
+    })
+
+
+    app.component('Son',{
+        props: {
+            name: {
+                type: String,
+                validator: function(value) {
+                    return value.search('12') != -1
+                },
+                //required: true,
+                default: 'aaa.com'
+            }
+        },
+        template:`<div>{{ typeof name}} div </div>`
+    })
+    
+
+
+    const vm = app.mount("#app")
+
+</script>
+
+</html>

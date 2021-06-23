@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script>
+    const app = Vue.createApp({
+        data(){
+            return {
+                counter: 0
+            }
+        },
+        template: `
+            <h2>dogsun.com</h2>
+            <counter :counter="counter"/>
+        `
+    })
+
+    //单向数据流，不能改变counter的值
+    // app.component('Counter',{
+    //     props: ['counter'],
+    //     template: `{{counter}}<button @click="counter+=1">增加数量</button>`
+    // })
+
+
+    app.component('Counter',{
+        props: ['counter'],
+        data() {
+            return {
+                newCounter: this.counter
+            }
+        },
+        // template: `{{counter}}<button @click="counter+=1">增加数量</button>`
+        template: `{{newCounter}}<button @click="newCounter+=1">增加数量</button>`
+    })
+    
+
+
+    const vm = app.mount("#app")
+
+</script>
+
+</html>
